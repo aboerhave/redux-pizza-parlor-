@@ -14,7 +14,7 @@ class PizzaForm extends Component {
         }
     }
 
-    onChange = (event, propertyName) => {
+    handleChange = (event, propertyName) => {
         this.setState({
             order: {
                 ...this.state.customer,
