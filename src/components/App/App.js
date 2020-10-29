@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import PizzaForm from '../PizzaForm/PizzaForm';
+import {connect} from 'react-redux';
 
 class App extends Component {
   render() {
@@ -12,9 +14,14 @@ class App extends Component {
         <br/>
         <img src="images/pizza_photo.png"/>
         <p>Pizza is great.</p>
+        <PizzaForm />
       </div>
     );
   }
 }
 
-export default App;
+const putReduxStateOnProps = (reduxStore) => ({
+  reduxStore
+})
+
+export default connect(putReduxStateOnProps)(App);
