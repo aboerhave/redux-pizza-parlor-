@@ -6,9 +6,19 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
+const pizzaList = (state = [], action) => {
+  switch(action.type){
+    case 'SET_PIZZAS': 
+    return action.payload;
+    default: 
+    return state;
+  }
+}
+
+
 const reduxStore = createStore(
     combineReducers({
-      
+      pizzaList,
     }),
     applyMiddleware(logger)
   );

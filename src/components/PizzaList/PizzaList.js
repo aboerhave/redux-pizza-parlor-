@@ -7,9 +7,11 @@ import { connect } from 'react-redux';
 class PizzaList extends Component {
    
 
+
     render() {
         return (
             <div>
+                {/* {this.props.reduxState.pizzaList} */}
                 <table>
                     <tbody>
                         
