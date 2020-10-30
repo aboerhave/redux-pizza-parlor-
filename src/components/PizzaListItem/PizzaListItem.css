@@ -1,0 +1,7 @@
+.pizzaBox {
+    width: 250px; 
+    height: 500px;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
