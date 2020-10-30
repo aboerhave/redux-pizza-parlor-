@@ -11,10 +11,11 @@ class PizzaList extends Component {
     render() {
         return (
             <div>
-                {/* {this.props.reduxState.pizzaList} */}
                 <table>
                     <tbody>
-                        
+                    {this.props.reduxStore.pizzaList.map((pizza) => {
+                    return <h1>{pizza.name}</h1>
+                })}
                     </tbody>
                 </table>
             </div>

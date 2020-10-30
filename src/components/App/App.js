@@ -17,7 +17,7 @@ getPizza = () => {
     url: '/api/pizza'
   }).then((response) => {
     console.log(response.data)
-    // this.props.dispatch({type: 'SET_PIZZAS', payload: response.data})
+    this.props.dispatch({type: 'SET_PIZZAS', payload: response.data})
   }).catch((error) =>{
     console.log('error in get pizza', error)
   })
