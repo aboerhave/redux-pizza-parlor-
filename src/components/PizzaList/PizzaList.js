@@ -13,9 +13,9 @@ class PizzaList extends Component {
             <div>
                 <table>
                     <tbody>
-                    {this.props.reduxStore.pizzaList.map((pizza) => {
-                    return <h1>{pizza.name}</h1>
-                })}
+                        {this.props.reduxStore.pizzaList.map((pizza, i) => {
+                            return <PizzaListItem key={i} pizza={pizza} />
+                        })}
                     </tbody>
                 </table>
             </div>
