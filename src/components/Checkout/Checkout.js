@@ -10,13 +10,11 @@ class Checkout extends Component {
 
         <h1>Step 3: Checkout</h1>
         <h3>
-            this.props.reduxState.reducer.map
-            .customer_name
-            .street_address
-            .cty
+            {this.props.reduxStore.orderInfo.customer_name}<br/>
+            {this.props.reduxStore.orderInfo.street_address}<br/>
+            {this.props.reduxStore.orderInfo.cty}
         </h3>    
-        <h2>.type</h2>  
-      {/* <h2>import order type here</h2> */}
+        <h2>{this.props.reduxStore.orderInfo.type}</h2>  
 
         <table>
             <thead>
@@ -26,9 +24,9 @@ class Checkout extends Component {
                 </tr>
             </thead>
             <tbody>
-                this.props.reduxState.reducer.map => (item)
+                {/* this.props.reduxState.reducer.map => (item)
                 <td>{item.name}</td>
-                <td>{item.cost}</td>
+                <td>{item.cost}</td> */}
             </tbody>
         </table>
         loop through costs and add them to eachother
