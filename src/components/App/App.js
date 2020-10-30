@@ -4,8 +4,8 @@ import './App.css';
 import PizzaForm from '../PizzaForm/PizzaForm';
 import PizzaList from '../PizzaList/PizzaList';
 import {connect} from 'react-redux';
-import { Router } from 'react-router-dom';
-import {HashRouter} from 'react-redux';
+// import { Router } from 'react-router-dom';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
 
 class App extends Component {
 
@@ -40,7 +40,7 @@ getPizza = () => {
           {/* <PizzaForm /> */}
           <Route exact path='/' component={PizzaList} />
           <Route path='/PizzaForm' component={PizzaForm} />
-          <Route path='/Checkout' component={Checkout} />
+          {/* <Route path='/Checkout' component={Checkout} /> */}
         </div>
       </Router >
     );

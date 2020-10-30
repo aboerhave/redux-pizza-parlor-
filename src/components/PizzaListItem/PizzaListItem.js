@@ -9,11 +9,13 @@ class PizzaListItem extends Component {
    
     state = {
         added: false,
-        pizzas: [],
         pizza: {
             id: 0,
-            quantity: 0
-        }
+            quantity: 0,
+            name: '',
+            quantity: ''
+        },
+        pizzas: [],
     }
 
     addPizzaToOrder = () => {
@@ -27,6 +29,7 @@ class PizzaListItem extends Component {
             },
             pizzas: [...this.state.pizzas, this.state.pizza]
         });
+        console.log(this.state.pizzas);
     }
 
     removePizzaFromOrder = () => {
@@ -35,9 +38,9 @@ class PizzaListItem extends Component {
         });
     }
 
-    handleClick = () => [
-        this.props.history.push()
-    ]
+    handleClick = () => {
+        // this.props.history.push()
+    }
 
     render() {
         return (
@@ -53,6 +56,7 @@ class PizzaListItem extends Component {
                         <button onClick={this.removePizzaFromOrder} >Remove</button>
                     }
                 </div>
+                {JSON.stringify(this.state.pizzas)}
             </div>
         )
     }
