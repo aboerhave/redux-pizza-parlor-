@@ -24,14 +24,25 @@ const orderInfo = (state = {}, action) => {
   }
 }
 
+const allOrders = (state = [], action) => {
+  switch (action.type) {
+    case "GET_ORDERS":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+
 
 
 const reduxStore = createStore(
-    combineReducers({
-      pizzaList,
-      orderInfo,
-    }),
-    applyMiddleware(logger)
-  );
+  combineReducers({
+    pizzaList,
+    orderInfo,
+    allOrders,
+  }),
+  applyMiddleware(logger)
+);
 
 ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
