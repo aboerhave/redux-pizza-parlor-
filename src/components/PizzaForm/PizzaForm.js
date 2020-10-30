@@ -27,7 +27,11 @@ class PizzaForm extends Component {
         event.preventDefault();
         console.log('add customer');
         console.log(this.state.customer);
-        
+        this.sendInfo();
+    }
+
+    sendInfo = () => {
+        this.props.dispatch({type: 'GET_INFO', payload: this.state.customer})
     }
 
     render() {
