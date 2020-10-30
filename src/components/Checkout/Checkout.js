@@ -3,6 +3,12 @@ import {connect} from 'react-redux';
 
 class Checkout extends Component {
 
+
+    handleClick = () =>{
+        console.log('clicked');
+        
+    }
+
   render(){
     return (
         <>
@@ -31,7 +37,8 @@ class Checkout extends Component {
         </table>
         loop through costs and add them to eachother
         {/* Total: insert total here */}
-        {/* Checkout Button */}
+        <button onClick={this.handleClick}>Button One</button>
+
         </>
 
         
@@ -39,6 +46,6 @@ class Checkout extends Component {
   }
 }
 
-const putReduxStateOnProps = (reduxState) => ({reduxState});
+const putReduxStateOnProps = (reduxStore) => ({reduxStore});
 
 export default connect(putReduxStateOnProps)(Checkout);
