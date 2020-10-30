@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PizzaListItem from '../PizzaListItem/PizzaListItem';
 
 
 class PizzaList extends Component {
