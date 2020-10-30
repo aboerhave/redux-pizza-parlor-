@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './PizzaListItem.css';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 
 class PizzaListItem extends Component {
@@ -33,18 +35,24 @@ class PizzaListItem extends Component {
         });
     }
 
+    handleClick = () => [
+        this.props.history.push()
+    ]
+
     render() {
         return (
-            <div className="pizzaBox">
-                <h3>{this.props.pizza.name}</h3>
-                <p>{this.props.pizza.description}</p>
-                <p>{this.props.pizza.price}</p>
-                {/* changes whether add or remove button appears */}
-                {this.state.added !== true ?
-                    <button onClick={this.addPizzaToOrder} >Add</button>
-                    :
-                    <button onClick={this.removePizzaFromOrder} >Remove</button>
-                }
+            <div>
+                <div className="pizzaBox">
+                    <h3>{this.props.pizza.name}</h3>
+                    <p>{this.props.pizza.description}</p>
+                    <p>{this.props.pizza.price}</p>
+                    {/* changes whether add or remove button appears */}
+                    {this.state.added !== true ?
+                        <button onClick={this.addPizzaToOrder} >Add</button>
+                        :
+                        <button onClick={this.removePizzaFromOrder} >Remove</button>
+                    }
+                </div>
             </div>
         )
     }
